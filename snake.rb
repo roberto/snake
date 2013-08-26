@@ -51,7 +51,7 @@ class Snake
 
   def initialize
     @active = true
-    @direction = :up
+    @direction = @next_direction = :up
     @blocks = [SnakeBlock.new(320, 320)]
     add_block
     add_block
@@ -78,23 +78,24 @@ class Snake
   end
 
   def up
-    @direction = :up unless @direction == :down
+    @next_direction = :up unless @direction == :down
   end
 
   def down
-    @direction = :down unless @direction == :up
+    @next_direction = :down unless @direction == :up
   end
 
   def left
-    @direction = :left unless @direction == :right
+    @next_direction = :left unless @direction == :right
   end
 
   def right
-    @direction = :right unless @direction == :left
+    @next_direction = :right unless @direction == :left
   end
   
   def update
     if @active && can_update?
+      @direction = @next_direction
       add_block
       @blocks.shift
     end
