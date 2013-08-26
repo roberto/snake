@@ -6,7 +6,7 @@
 
 Dependencies:
 
-* [RVM])https://rvm.io/)
+* [RVM](https://rvm.io/)
 * [bundler](http://bundler.io/)
 
 ```
